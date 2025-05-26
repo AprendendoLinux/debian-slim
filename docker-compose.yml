@@ -1,0 +1,13 @@
+services:
+  acesso:
+    container_name: acesso
+    hostname: acesso
+    image: aprendendolinux/debian:latest
+    restart: always
+    environment:
+      - ROOT_PASSWORD=Sua_Senha_Segura
+      - TZ=America/Sao_Paulo
+    volumes:
+      - /srv/acesso:/var/www/html
+    ports:
+      - "2222:22"
