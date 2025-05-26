@@ -12,6 +12,9 @@ RUN apt-get update \
     tzdata \
     git \
     net-tools \
+    iputils-ping \
+    telnet \
+    tcpdump \
     vim \
     && rm -rf /var/lib/apt/lists/* /var/cache/apt/* /tmp/*
 
@@ -37,8 +40,11 @@ EXPOSE 22
 # Criando um diretório para o volume mapeado
 RUN mkdir -p /var/www/html
 
+# Define Volume
+VOLUME /var/www/html
+
 # Definindo o diretório de trabalho
-WORKDIR /var/www/html
+WORKDIR /root
 
 # Iniciando o servidor SSH ao rodar o contêiner
 ENTRYPOINT ["/entrypoint.sh"]
