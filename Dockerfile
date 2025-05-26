@@ -6,6 +6,9 @@ RUN apt-get update \
     && apt-get dist-upgrade -y \
     && apt-get install -y \
     openssh-server \
+    rsync \
+    sshpass \
+    mariadb-client \
     tzdata \
     git \
     net-tools \
